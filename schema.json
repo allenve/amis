@@ -15684,8 +15684,8 @@
           "description": "分割符"
         },
         "downloadUrl": {
-          "type": "string",
-          "description": "默认显示文件路径的时候会支持直接下载， 可以支持加前缀如：`http://xx.dom/filename=` ， 如果不希望这样，可以把当前配置项设置为 `false`。"
+          "$ref": "#/definitions/SchemaApi",
+          "description": "默认显示文件路径的时候会支持直接下载， 可以支持加前缀如：`http://xx.dom/filename=` ， 如果不希望这样，可以把当前配置项设置为 `false`。\n\n1.1.6 版本开始将支持变量 ${xxx} 来自己拼凑个下载地址，并且支持配置成 post."
         },
         "fileField": {
           "type": "string",
@@ -15756,6 +15756,18 @@
             "$ref": "#/definitions/SchemaTokenizeableString"
           },
           "description": "上传后把其他字段同步到表单内部。"
+        },
+        "valueField": {
+          "type": "string",
+          "description": "接口返回的数据中，哪个用来当做值"
+        },
+        "nameField": {
+          "type": "string",
+          "description": "接口返回的数据中，哪个用来展示文件名"
+        },
+        "urlField": {
+          "type": "string",
+          "description": "接口返回的数据中哪个用来作为下载地址。"
         },
         "stateTextMap": {
           "type": "object",
@@ -43053,7 +43065,7 @@
           "$ref": "#/definitions/FileControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|btnLabel|accept|asBase64|asBlob|autoUpload|chunkApi|chunkSize|delimiter|downloadUrl|fileField|finishChunkApi|hideUploadButton|maxLength|maxSize|receiver|startChunkApi|useChunk|btnClassName|btnUploadClassName|multiple|joinValues|extractValue|resetValue|autoFill|stateTextMap|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|btnLabel|accept|asBase64|asBlob|autoUpload|chunkApi|chunkSize|delimiter|downloadUrl|fileField|finishChunkApi|hideUploadButton|maxLength|maxSize|receiver|startChunkApi|useChunk|btnClassName|btnUploadClassName|multiple|joinValues|extractValue|resetValue|autoFill|valueField|nameField|urlField|stateTextMap|unique|columnClassName)$": {}
           }
         },
         {
@@ -47085,7 +47097,7 @@
           "$ref": "#/definitions/FileControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|btnLabel|accept|asBase64|asBlob|autoUpload|chunkApi|chunkSize|delimiter|downloadUrl|fileField|finishChunkApi|hideUploadButton|maxLength|maxSize|receiver|startChunkApi|useChunk|btnClassName|btnUploadClassName|multiple|joinValues|extractValue|resetValue|autoFill|stateTextMap|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|btnLabel|accept|asBase64|asBlob|autoUpload|chunkApi|chunkSize|delimiter|downloadUrl|fileField|finishChunkApi|hideUploadButton|maxLength|maxSize|receiver|startChunkApi|useChunk|btnClassName|btnUploadClassName|multiple|joinValues|extractValue|resetValue|autoFill|valueField|nameField|urlField|stateTextMap|columnClassName|columnRatio)$": {}
           }
         },
         {
