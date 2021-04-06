@@ -36333,6 +36333,17 @@
           },
           "description": "配置映射规则，值可以使用模板语法。当 key 为 * 时表示 else，也就是说值没有映射到任何规则时用 * 对应的值展示。"
         },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SchemaApi"
+            },
+            {
+              "$ref": "#/definitions/SchemaTokenizeableString"
+            }
+          ],
+          "description": "如果想远程拉取字典，请配置 source 为接口。"
+        },
         "placeholder": {
           "type": "string",
           "description": "占位符"
@@ -39144,7 +39155,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|label|labelClassName|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|label|labelClassName|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -47596,7 +47607,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|required|validationErrors|validations|value|clearValueOnHidden)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|required|validationErrors|validations|value|clearValueOnHidden)$": {}
           }
         },
         {
@@ -47984,7 +47995,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|label|fixed|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|label|fixed|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
           }
         },
         {
@@ -48372,7 +48383,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|label|labelClassName|popOver|quickEdit|copyable)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|label|labelClassName|popOver|quickEdit|copyable)$": {}
           }
         },
         {
@@ -48760,7 +48771,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
           }
         },
         {
@@ -49148,7 +49159,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|x|y|w|h|width|height|align|valign|gridClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|x|y|w|h|width|height|align|valign|gridClassName)$": {}
           }
         },
         {
@@ -49536,7 +49547,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|columnClassName|width|height|style)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|columnClassName|width|height|style)$": {}
           }
         },
         {
@@ -49924,7 +49935,7 @@
           "$ref": "#/definitions/MappingSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|placeholder|rowClassName|cellClassName)$": {}
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|name|map|source|placeholder|rowClassName|cellClassName)$": {}
           }
         },
         {
