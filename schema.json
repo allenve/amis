@@ -892,7 +892,7 @@
         },
         "attachDataToQuery": {
           "type": "boolean",
-          "description": "如果 method 为 get 的接口，设置了 data 信息。 默认 data 会自动附带在 query 里面发送给后端。\n\n如果想通过 body 发送给后端，那么请把这个配置成 false。\n\n但是，浏览器还不支持啊，设置了只是摆设。"
+          "description": "如果 method 为 get 的接口，设置了 data 信息。 默认 data 会自动附带在 query 里面发送给后端。\n\n如果想通过 body 发送给后端，那么请把这个配置成 false。\n\n但是，浏览器还不支持啊，设置了只是摆设。除非服务端支持 method-override"
         },
         "dataType": {
           "type": "string",
@@ -928,7 +928,12 @@
         },
         "autoRefresh": {
           "type": "boolean",
-          "description": "是否自动刷新，当 url 中的取值结果变化时，自动刷新数据。"
+          "description": "是否自动刷新，当 url 中的取值结果变化时，自动刷新数据。",
+          "default": true
+        },
+        "trackExpression": {
+          "type": "string",
+          "description": "当开启自动刷新的时候，默认是 api 的 url 来自动跟踪变量变化的。 如果你希望监控 url 外的变量，请配置 traceExpression。"
         },
         "cache": {
           "type": "number",
