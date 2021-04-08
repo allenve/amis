@@ -6466,7 +6466,7 @@ amis.require.resourceMap({
       "type": "js"
     },
     "docs/zh-CN/components/form/condition-builder.md": {
-      "url": "/amis/docs/zh-CN/components/form/condition-builder_fcf112d.js",
+      "url": "/amis/docs/zh-CN/components/form/condition-builder_28d0305.js",
       "type": "js"
     },
     "docs/zh-CN/components/form/date.md": {

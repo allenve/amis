@@ -11292,6 +11292,17 @@
         "config": {
           "$ref": "#/definitions/Config",
           "description": "其他配置"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SchemaApi"
+            },
+            {
+              "$ref": "#/definitions/SchemaTokenizeableString"
+            }
+          ],
+          "description": "通过远程拉取配置项"
         }
       },
       "required": [
@@ -43004,7 +43015,7 @@
           "$ref": "#/definitions/ConditionBuilderControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|funcs|fields|config|unique|columnClassName)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|funcs|fields|config|source|unique|columnClassName)$": {}
           }
         },
         {
@@ -47036,7 +47047,7 @@
           "$ref": "#/definitions/ConditionBuilderControlSchema",
           "additionalProperties": false,
           "patternProperties": {
-            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|funcs|fields|config|columnClassName|columnRatio)$": {}
+            "^(className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|type|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden|funcs|fields|config|source|columnClassName|columnRatio)$": {}
           }
         },
         {
