@@ -5958,7 +5958,7 @@ amis.require.resourceMap({
       "type": "js"
     },
     "docs/zh-CN/index.md": {
-      "url": "/amis/docs/zh-CN/index_03411cd.js",
+      "url": "/amis/docs/zh-CN/index_61aac71.js",
       "type": "js"
     },
     "docs/zh-CN/start/getting-started.md": {
