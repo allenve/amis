@@ -6650,7 +6650,7 @@ amis.require.resourceMap({
       "type": "js"
     },
     "docs/zh-CN/components/form/tree.md": {
-      "url": "/amis/docs/zh-CN/components/form/tree_c24f273.js",
+      "url": "/amis/docs/zh-CN/components/form/tree_a0d923c.js",
       "type": "js"
     },
     "docs/zh-CN/components/form/treeselect.md": {
