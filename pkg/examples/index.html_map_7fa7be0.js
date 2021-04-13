@@ -6745,6 +6745,10 @@ amis.require.resourceMap({
       "url": "/amis/docs/zh-CN/components/progress_492feb6.js",
       "type": "js"
     },
+    "docs/zh-CN/components/steps.md": {
+      "url": "/amis/docs/zh-CN/components/steps_a7dcdb4.js",
+      "type": "js"
+    },
     "docs/zh-CN/components/property.md": {
       "url": "/amis/docs/zh-CN/components/property_4c0b284.js",
       "type": "js"

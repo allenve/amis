@@ -457,6 +457,9 @@
         },
         {
           "$ref": "#/definitions/AnchorNavSchema"
+        },
+        {
+          "$ref": "#/definitions/StepsSchema"
         }
       ]
     },
@@ -3033,7 +3036,8 @@
         "video",
         "wizard",
         "wrapper",
-        "anchor-nav"
+        "anchor-nav",
+        "steps"
       ]
     },
     "ButtonGroupSchema": {
@@ -38955,6 +38959,170 @@
       ],
       "description": "AnchorNavSection 锚点区域渲染器 文档：https://baidu.gitee.io/amis/docs/components/anchor-nav"
     },
+    "StepsSchema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "steps",
+          "description": "指定为 Steps 步骤条渲染器"
+        },
+        "className": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "容器 css 类名"
+        },
+        "$ref": {
+          "type": "string",
+          "description": "配合 definitions 一起使用，可以实现无限循环的渲染器。"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "是否禁用"
+        },
+        "disabledOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否禁用表达式"
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "是否隐藏"
+        },
+        "hiddenOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否隐藏表达式"
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "是否显示"
+        },
+        "visibleOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否显示表达式"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StepSchema"
+          },
+          "description": "步骤"
+        },
+        "source": {
+          "type": "string",
+          "description": "API 或 数据映射"
+        },
+        "value": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "指定当前步骤"
+        },
+        "name": {
+          "type": "string",
+          "description": "变量映射"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "wait",
+                "process",
+                "finish",
+                "error"
+              ]
+            },
+            {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string",
+                "enum": [
+                  "wait",
+                  "process",
+                  "finish",
+                  "error"
+                ]
+              }
+            }
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "vertical"
+          ],
+          "description": "展示模式"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "StepSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "className": {
+          "$ref": "#/definitions/SchemaClassName",
+          "description": "容器 css 类名"
+        },
+        "$ref": {
+          "type": "string",
+          "description": "配合 definitions 一起使用，可以实现无限循环的渲染器。"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "是否禁用"
+        },
+        "disabledOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否禁用表达式"
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "是否隐藏"
+        },
+        "hiddenOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否隐藏表达式"
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "是否显示"
+        },
+        "visibleOn": {
+          "$ref": "#/definitions/SchemaExpression",
+          "description": "是否显示表达式"
+        },
+        "title": {
+          "type": "string",
+          "description": "标题"
+        },
+        "subTitle": {
+          "type": "string",
+          "description": "子标题"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
     "SchemaObjectCardBodyField": {
       "anyOf": [
         {
@@ -39339,6 +39507,13 @@
           "additionalProperties": false,
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|label|labelClassName|name|popOver|quickEdit|copyable)$": {}
+          }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|label|labelClassName|popOver|quickEdit|copyable)$": {}
           }
         }
       ]
@@ -47792,6 +47967,13 @@
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|name|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|mode|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|value|clearValueOnHidden)$": {}
           }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|tpl|text|popOver|quickEdit|copyable|size|label|labelClassName|remark|labelRemark|hint|submitOnChange|readOnly|validateOnChange|description|desc|descriptionClassName|horizontal|inline|inputClassName|placeholder|required|validationErrors|validations|clearValueOnHidden)$": {}
+          }
         }
       ]
     },
@@ -48179,6 +48361,13 @@
           "additionalProperties": false,
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|label|fixed|name|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
+          }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|label|fixed|popOver|quickEdit|quickEditOnUpdate|copyable|sortable|searchable|toggled|width|filterable|breakpoint|remark)$": {}
           }
         }
       ]
@@ -48568,6 +48757,13 @@
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|label|labelClassName|name|popOver|quickEdit|copyable)$": {}
           }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|label|labelClassName|popOver|quickEdit|copyable)$": {}
+          }
         }
       ]
     },
@@ -48955,6 +49151,13 @@
           "additionalProperties": false,
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|mode|horizontal|columnClassName)$": {}
+          }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|xs|xsHidden|xsOffset|xsPull|xsPush|sm|smHidden|smOffset|smPull|smPush|md|mdHidden|mdOffset|mdPull|mdPush|lg|lgHidden|lgOffset|lgPull|lgPush|horizontal|columnClassName)$": {}
           }
         }
       ]
@@ -49344,6 +49547,13 @@
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|x|y|w|h|width|height|align|valign|gridClassName)$": {}
           }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|x|y|w|h|width|height|align|valign|gridClassName)$": {}
+          }
         }
       ]
     },
@@ -49732,6 +49942,13 @@
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|columnClassName|width|height|style)$": {}
           }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|columnClassName|width|height|style)$": {}
+          }
         }
       ]
     },
@@ -50119,6 +50336,13 @@
           "additionalProperties": false,
           "patternProperties": {
             "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|links|active|linkClassName|sectionClassName|rowClassName|cellClassName)$": {}
+          }
+        },
+        {
+          "$ref": "#/definitions/StepsSchema",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(type|className|$ref|disabled|disabledOn|hidden|hiddenOn|visible|visibleOn|steps|source|value|name|status|mode|rowClassName|cellClassName)$": {}
           }
         }
       ]
