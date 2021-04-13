@@ -6554,7 +6554,7 @@ amis.require.resourceMap({
       "type": "js"
     },
     "docs/zh-CN/components/form/nestedselect.md": {
-      "url": "/amis/docs/zh-CN/components/form/nestedselect_c414f7c.js",
+      "url": "/amis/docs/zh-CN/components/form/nestedselect_39ed33a.js",
       "type": "js"
     },
     "docs/zh-CN/components/form/number.md": {
